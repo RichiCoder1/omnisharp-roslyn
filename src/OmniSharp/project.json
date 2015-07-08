@@ -26,7 +26,8 @@
         "dnx451": {
             "dependencies": {
                 "ICSharpCode.NRefactory": "6.0.0-alpha3",
-                "ScriptCs.Hosting": "0.14.1"
+                "ScriptCs.Hosting": "0.14.1",
+                "Cake.Core": "0.4.3"
             },
             "frameworkAssemblies": {
                 "System.Globalization": "",

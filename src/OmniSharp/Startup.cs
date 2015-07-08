@@ -45,7 +45,7 @@ namespace OmniSharp
         }
 
         public IConfiguration Configuration { get; private set; }
-        
+
         public OmnisharpWorkspace Workspace { get; set; }
 
         public void ConfigureServices(IServiceCollection services)
@@ -70,12 +70,14 @@ namespace OmniSharp
             services.AddInstance(new DnxContext());
             services.AddInstance(new MSBuildContext());
             services.AddInstance(new ScriptCs.ScriptCsContext());
+            services.AddInstance(new Cake.CakeContext());
 
             services.AddSingleton<IProjectSystem, DnxProjectSystem>();
             services.AddSingleton<IProjectSystem, MSBuildProjectSystem>();
 
 #if DNX451
             services.AddSingleton<IProjectSystem, ScriptCs.ScriptCsProjectSystem>();
+            services.AddSingleton<IProjectSystem, Cake.CakeProjectSystem>();
 #endif
 
             // Add the file watcher
