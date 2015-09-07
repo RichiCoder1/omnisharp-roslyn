@@ -7,8 +7,9 @@ namespace OmniSharp
     public partial class OmnisharpController
     {
         [HttpPost("updatebuffer")]
-        public ObjectResult UpdateBuffer(Request request)
+        public async Task<ObjectResult> UpdateBuffer(UpdateBufferRequest request)
         {
+            await _workspace.BufferManager.UpdateBuffer(request);
             return new ObjectResult(true);
         }
 
